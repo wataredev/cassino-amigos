@@ -1,11 +1,26 @@
-import { Button } from "@/components/ui/button"
+import gsap from 'gsap'
+import { ScrollTrigger, SplitText } from 'gsap/all'
+import Header from "./sections/Header"
+import Hero from "./sections/Hero"
+import Footer from "./sections/Footer"
+
+
+gsap.registerPlugin(ScrollTrigger, SplitText)
 
 function App() {
   return (
-    <div className="flex min-h-svh flex-col items-center justify-center">
-      <Button>Click me</Button>
-    </div>
+    <main>
+      <Header/>
+      <Hero/>
+      <Footer/>
+    </main>
+
   )
 }
 
 export default App
+
+
+
+
+
