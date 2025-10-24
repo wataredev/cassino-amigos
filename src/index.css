@@ -2,6 +2,24 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@font-face {
+  font-family: 'NeoNeon';
+  src: url('/fonts/NeonLight-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+@layer utilities {
+  .font-neon {
+    font-family: var(--font-neon);
+  }
+
+  .font-neon-light {
+    font-family: var(--font-neon-light);
+  }
+}
+
 html,
 body {
   width: 100%;
@@ -14,5 +32,46 @@ body {
 @layer components {
   .container {
     @apply mx-auto max-w-[1800px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
+  }
+
+  .noisy {
+    @apply absolute inset-0 size-full bg-[url("/images/noise.png")] opacity-40 z-10 pointer-events-none;
+  }
+}
+
+
+:root {
+  --font-neon: 'NeoNeon', sans-serif;
+  --font-neon-light: 'NeoNeonLight', sans-serif;
+}
+
+
+@layer utilities {
+  /* ✨ Piscar leve, sem preencher o interior */
+  @keyframes flicker {
+    0%, 100% {
+      opacity: 1;
+      text-shadow:
+        0 0 4px rgba(255, 255, 255, 0.6),
+        0 0 8px rgba(255, 255, 255, 0.4),
+        0 0 16px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+      opacity: 0.85;
+      text-shadow:
+        0 0 2px rgba(255, 255, 255, 0.3),
+        0 0 4px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  /* 🔴 Contorno neon vermelho suave */
+  .neon-stroke {
+    color: transparent; /* sem preenchimento */
+    -webkit-text-stroke: 1.5px #ffffff; /* borda vermelha fina */
+    text-shadow:
+      0 0 2px rgba(255, 255, 255, 0.7),
+      0 0 4px rgba(255, 255, 255, 0.5),
+      0 0 8px rgba(255, 255, 255, 0.3);
+    animation: flicker 3s infinite ease-in-out;
   }
 }

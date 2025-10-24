@@ -2,6 +2,7 @@ import gsap from 'gsap'
 import { ScrollTrigger, SplitText } from 'gsap/all'
 import Header from "./sections/Header"
 import Hero from "./sections/Hero"
+import Persons from "./sections/Persons"
 import Footer from "./sections/Footer"
 
 
@@ -12,6 +13,7 @@ function App() {
     <main>
       <Header/>
       <Hero/>
+      <Persons/>
       <Footer/>
     </main>
 
