@@ -4,6 +4,7 @@
 
 import { useLayoutEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { Link } from "react-router-dom"
 // use your own icon import if react-icons is not available
 import { GoArrowUpRight } from 'react-icons/go';
 import './CardNav.css';
@@ -119,19 +120,6 @@ const CardNav = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isExpanded]);
 
-  const toggleMenu = () => {
-    const tl = tlRef.current;
-    if (!tl) return;
-    if (!isExpanded) {
-      setIsHamburgerOpen(true);
-      setIsExpanded(true);
-      tl.play(0);
-    } else {
-      setIsHamburgerOpen(false);
-      tl.eventCallback('onReverseComplete', () => setIsExpanded(false));
-      tl.reverse();
-    }
-  };
 
   const setCardRef = i => el => {
     if (el) cardsRef.current[i] = el;
@@ -141,20 +129,11 @@ const CardNav = ({
     <div className={`card-nav-container ${className}`}>
       <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
         <div className="card-nav-top">
-          <div
-            className={`hamburger-menu ${isHamburgerOpen ? 'open' : ''}`}
-            onClick={toggleMenu}
-            role="button"
-            aria-label={isExpanded ? 'Close menu' : 'Open menu'}
-            tabIndex={0}
-            style={{ color: menuColor || '#000' }}
-          >
-            <div className="hamburger-line" />
-            <div className="hamburger-line" />
-          </div>
 
           <div className="logo-container">
-            <img src={logo} alt={logoAlt} className="logo" />
+            <Link to="/">
+              <img src={logo} alt={logoAlt} className="logo" />
+            </Link>
           </div>
 
           <button
@@ -166,26 +145,6 @@ const CardNav = ({
           </button>
         </div>
 
-        <div className="card-nav-content" aria-hidden={!isExpanded}>
-          {(items || []).slice(0, 3).map((item, idx) => (
-            <div
-              key={`${item.label}-${idx}`}
-              className="nav-card"
-              ref={setCardRef(idx)}
-              style={{ backgroundColor: item.bgColor, color: item.textColor }}
-            >
-              <div className="nav-card-label">{item.label}</div>
-              <div className="nav-card-links">
-                {item.links?.map((lnk, i) => (
-                  <a key={`${lnk.label}-${i}`} className="nav-card-link" href={lnk.href} aria-label={lnk.ariaLabel}>
-                    <GoArrowUpRight className="nav-card-link-icon" aria-hidden="true" />
-                    {lnk.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
       </nav>
     </div>
   );

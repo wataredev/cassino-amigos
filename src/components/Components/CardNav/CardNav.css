@@ -3,7 +3,7 @@
 */
 
 .card-nav-container {
-  position: absolute;
+  position: fixed;
   top: 2em;
   left: 50%;
   transform: translateX(-50%);
@@ -72,14 +72,14 @@
   transform: translateY(-4px) rotate(-45deg);
 }
 
-.logo-container {
+/* .logo-container {
   display: flex;
   align-items: center;
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .logo {
   height: 28px;
