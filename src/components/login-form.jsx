@@ -15,18 +15,25 @@ import {
 } from "@/components/ui/field"
 import { Input } from "@/components/ui/input"
 import authService from '../appwrite/auth';
+import service from '../appwrite/config'
 import { useDispatch } from 'react-redux'
 import { login } from '../store/authSlice'
+import { toast } from 'sonner'
 import { useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form'
 import { useState } from "react"
+import { Spinner } from "@/components/ui/spinner"
+import { Query } from "appwrite";
+import conf from "../conf/conf"
 
 export function LoginForm({ className, ...props}) {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { register, handleSubmit } = useForm();
+  const [loader, setLoader] = useState(false)
+
+  const { register, handleSubmit, reset } = useForm();
   const [error, setError] = useState("");
 
   const entrarConta = async (data) => {
@@ -34,6 +41,8 @@ export function LoginForm({ className, ...props}) {
     setError("")
 
     try {
+
+      setLoader(true)
       
       const userData = await authService.login(data)
 
@@ -43,14 +52,29 @@ export function LoginForm({ className, ...props}) {
 
         if (userAtual) {
           
-          console.log("CONTA LOGADA COM SUCESSO!")
+          const res = await service.databases.listDocuments(
+            conf.database,
+            conf.tableUsuario,
+            [Query.equal("accountId", userAtual.$id)]
+          );
 
-          dispatch(login({ userData: userAtual}))
+          const userDoc = res.documents[0];
+
+          if (!userDoc) {
+            toast.error("Erro: perfil não encontrado no Appwrite Database.");
+            return;
+          }
+
+          dispatch(login({ userData: userAtual, userDoc}))
         }
       }
 
     } catch (error) {
       console.log("ERRO AO LOGAR NO USUÁRIO, ", error)
+      toast.error("Falha no login. Verifique seus dados e tente novamente.")
+      reset()
+    } finally {
+      setLoader(false)
     }
 
   }
@@ -83,8 +107,11 @@ export function LoginForm({ className, ...props}) {
                 <Input id="password" type="password" {...register("password", { required: true })} />
               </Field>
               <Field>
-                <Button type="submit" variant="outline">Entrar</Button>
-                <FieldDescription className="text-center">
+                <Button type="submit" variant="outline" disabled={loader}>
+                  Entrar
+                  { loader && <Spinner />}
+                </Button>
+                <FieldDescription className="text-center" onClick={() => navigate("/registro")}>
                   Não tem uma conta? <a href="#">Registre-se</a>
                 </FieldDescription>
               </Field>

@@ -1,12 +1,9 @@
-/*
-	Installed from https://reactbits.dev/default/
-*/
 
-import { useLayoutEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
-import { Link } from "react-router-dom"
-// use your own icon import if react-icons is not available
-import { GoArrowUpRight } from 'react-icons/go';
+import { Link, useNavigate, useLocation } from "react-router-dom"
+import { useSelector, useDispatch } from 'react-redux'
+import { logout } from "../../../store/authSlice";
+import authService from "../../../appwrite/auth";
+
 import './CardNav.css';
 
 const CardNav = ({
@@ -20,114 +17,35 @@ const CardNav = ({
   buttonBgColor,
   buttonTextColor
 }) => {
-  const [isHamburgerOpen, setIsHamburgerOpen] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const navRef = useRef(null);
-  const cardsRef = useRef([]);
-  const tlRef = useRef(null);
 
-  const calculateHeight = () => {
-    const navEl = navRef.current;
-    if (!navEl) return 260;
+  const navigate = useNavigate()
+  const location = useLocation()
+  const dispatch = useDispatch()
+  const authStatus = useSelector((state) => state.auth.status)
 
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    if (isMobile) {
-      const contentEl = navEl.querySelector('.card-nav-content');
-      if (contentEl) {
-        const wasVisible = contentEl.style.visibility;
-        const wasPointerEvents = contentEl.style.pointerEvents;
-        const wasPosition = contentEl.style.position;
-        const wasHeight = contentEl.style.height;
+  const isLanding = location.pathname === "/";
 
-        contentEl.style.visibility = 'visible';
-        contentEl.style.pointerEvents = 'auto';
-        contentEl.style.position = 'static';
-        contentEl.style.height = 'auto';
-
-        contentEl.offsetHeight;
-
-        const topBar = 60;
-        const padding = 16;
-        const contentHeight = contentEl.scrollHeight;
-
-        contentEl.style.visibility = wasVisible;
-        contentEl.style.pointerEvents = wasPointerEvents;
-        contentEl.style.position = wasPosition;
-        contentEl.style.height = wasHeight;
-
-        return topBar + contentHeight + padding;
-      }
+  const handleButtonClick = () => {
+    if (isLanding) {
+      navigate("/login");
+      return;
     }
-    return 260;
+
+    if (authStatus) {
+      authService.logout().then(() => {
+        dispatch(logout());
+        navigate("/login");
+      });
+    } else {
+      navigate("/login");
+    }
   };
 
-  const createTimeline = () => {
-    const navEl = navRef.current;
-    if (!navEl) return null;
-
-    gsap.set(navEl, { height: 60, overflow: 'hidden' });
-    gsap.set(cardsRef.current, { y: 50, opacity: 0 });
-
-    const tl = gsap.timeline({ paused: true });
-
-    tl.to(navEl, {
-      height: calculateHeight,
-      duration: 0.4,
-      ease
-    });
-
-    tl.to(cardsRef.current, { y: 0, opacity: 1, duration: 0.4, ease, stagger: 0.08 }, '-=0.1');
-
-    return tl;
-  };
-
-  useLayoutEffect(() => {
-    const tl = createTimeline();
-    tlRef.current = tl;
-
-    return () => {
-      tl?.kill();
-      tlRef.current = null;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ease, items]);
-
-  useLayoutEffect(() => {
-    const handleResize = () => {
-      if (!tlRef.current) return;
-
-      if (isExpanded) {
-        const newHeight = calculateHeight();
-        gsap.set(navRef.current, { height: newHeight });
-
-        tlRef.current.kill();
-        const newTl = createTimeline();
-        if (newTl) {
-          newTl.progress(1);
-          tlRef.current = newTl;
-        }
-      } else {
-        tlRef.current.kill();
-        const newTl = createTimeline();
-        if (newTl) {
-          tlRef.current = newTl;
-        }
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isExpanded]);
-
-
-  const setCardRef = i => el => {
-    if (el) cardsRef.current[i] = el;
-  };
+  const buttonLabel = isLanding ? "Entrar" : authStatus ? "Sair" : "Entrar";
 
   return (
     <div className={`card-nav-container ${className}`}>
-      <nav ref={navRef} className={`card-nav ${isExpanded ? 'open' : ''}`} style={{ backgroundColor: baseColor }}>
+      <nav className={`card-nav`} style={{ backgroundColor: baseColor }}>
         <div className="card-nav-top">
 
           <div className="logo-container">
@@ -140,8 +58,9 @@ const CardNav = ({
             type="button"
             className="card-nav-cta-button"
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+            onClick={handleButtonClick}
           >
-            Entrar
+            { buttonLabel }
           </button>
         </div>
 

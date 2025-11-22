@@ -27,13 +27,14 @@ export class AuthService {
             }
         } catch (error) {
             console.log("APPWRITE SIGNUP ERROR, SIGNUP METOD,", error)
+            throw error
         }
     }
 
     async login({email, password}) {
         try {
 
-            await this.account.deleteSession("current")
+            // ATÉ TER UM BOTÃO DE DESLOGAR await this.account.deleteSession("current")
 
             return await this.account.createEmailPasswordSession(
                 email,
@@ -41,6 +42,7 @@ export class AuthService {
             )
         } catch (error) {
             console.log("APPWRITE SERVICE ERROR, LOGIN METOD, ", error)
+            throw error
         }
     }
 
