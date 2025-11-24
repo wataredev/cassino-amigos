@@ -1,3 +1,8 @@
+import fotoHabbibs from "../assets/images_hero/foto-habbibs2.webp";
+import fotoFestaJuninaPaulo from "../assets/images_hero/festa-junina-paulo.webp";
+import fotoAniversarioGael from "../assets/images_hero/foto-aniversario-gael1_1.webp";
+
+
 export const itemsHeader = [
     {
       label: "About",
@@ -32,17 +37,17 @@ export const itemsHeader = [
 export const imagesMemorieHero = [
   {
     label: "Imagem com os amigos No Habbibs!",
-    src: "/public/images/memorias/foto-habbibs2.webp",
+    src: fotoHabbibs,
     className: "top-10 left-10 w-85 opacity-50 rotate-[-5deg]"
   },
   {
     label: "Imagem com os amigos na festa junina de Paulin!",
-    src: "/public/images/memorias/festa-junina-paulo.webp",
+    src: fotoFestaJuninaPaulo,
     className: "top-1/2 left-0 w-75 opacity-50 rotate-[10deg]"
   },
   {
     label: "Imagem cos os amigos no aniversário de gael!",
-    src: "/public/images/memorias/foto-aniversario-gael1_1.webp",
+    src: fotoAniversarioGael,
     className: "bottom-10 right-20 w-75 opacity-50 rotate-[-3deg]"
   }
 

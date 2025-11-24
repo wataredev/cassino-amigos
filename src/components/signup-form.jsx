@@ -23,7 +23,7 @@ import { useState } from "react";
 import { Spinner } from "@/components/ui/spinner"
 import { toast } from 'sonner'
 import conf from "../conf/conf"
-import { ID } from "appwrite"
+import { ID, Permission, Role, Query } from "appwrite"
 
 export function SignupForm({...props}) {
 
@@ -61,8 +61,13 @@ export function SignupForm({...props}) {
               {
                 accountId: userAtual.$id,
                 nome_display: data.name,
-                avatarUrl: null
-              }
+                foto_url: null
+              },
+              [
+                Permission.read(Role.user(userAtual.$id)),
+                Permission.update(Role.user(userAtual.$id)),
+                Permission.write(Role.user(userAtual.$id)),
+              ]
             );
 
             const userDoc = await service.databases.listDocuments(

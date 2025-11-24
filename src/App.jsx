@@ -17,11 +17,8 @@ gsap.registerPlugin(ScrollTrigger, SplitText)
 function App() {
 
   const dispatch = useDispatch();
-  const authStatus = useSelector((state) => state.auth.status)
 
   useEffect(() => {
-
-    if (authStatus) {
 
     authService
     .getCurrentUser()
@@ -29,7 +26,6 @@ function App() {
       if (userData) dispatch(login({userData}));
       else dispatch(logout());
     })
-    }
 
   }, [dispatch])
 
