@@ -23,15 +23,14 @@ class Service {
     return this.bucket.getFileView(conf.bucketFotoPerfil, fileId);
   }
 
-  updateFotoPerfil(userDocId, avatarFileId, foto_url) {
+  updateFotoPerfil(userDocId, foto_id, foto_url) {
     return this.databases.updateDocument(
       conf.database,
       conf.tableUsuario,
       userDocId,
       {
-        avatarFileId,
+        foto_id,
         foto_url,
-        updatedAt: new Date().toISOString()
       }
     );
   }

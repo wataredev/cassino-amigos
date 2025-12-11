@@ -7,8 +7,6 @@ import { imagesMemorieHero } from "../../constants";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 function Hero() {
   const heroRef = useRef(null);
   const videoRef = useRef(null);
@@ -44,9 +42,6 @@ function Hero() {
     });
   }, []);
 
-  /**
-   * ScrollTrigger do vídeo
-   */
   useGSAP(
     () => {
       const hero = heroRef.current;
@@ -61,7 +56,6 @@ function Hero() {
           end: isMobile ? "bottom+=90% top" : "bottom+=110% top",
           scrub: true,
           pin: true,
-          invalidateOnRefresh: true,
           onUpdate: (self) => {
             if (video.duration > 0) {
               video.currentTime = self.progress * video.duration;
@@ -115,7 +109,7 @@ function Hero() {
   );
 
   return (
-    <div ref={heroRef} className="relative w-full h-[125vh] overflow-hidden">
+    <div ref={heroRef} className="hero-wrapperrelative w-full h-[125vh] overflow-hidden">
 
       {/* RESERVA PARA PIN */}
       <div className="h-[125vh] w-full pointer-events-none" />

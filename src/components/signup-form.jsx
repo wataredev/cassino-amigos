@@ -61,7 +61,8 @@ export function SignupForm({...props}) {
               {
                 accountId: userAtual.$id,
                 nome_display: data.name,
-                foto_url: null
+                foto_url: null,
+                membro: false
               },
               [
                 Permission.read(Role.user(userAtual.$id)),

@@ -1,6 +1,8 @@
 import fotoHabbibs from "../assets/images_hero/foto-habbibs2.webp";
 import fotoFestaJuninaPaulo from "../assets/images_hero/festa-junina-paulo.webp";
 import fotoAniversarioGael from "../assets/images_hero/foto-aniversario-gael1_1.webp";
+import fotoGatoJamal from "../assets/images_hero/gato-jamal.webp"
+import fotoHalloween from "../assets/images_hero/hallowen.webp"
 
 
 export const itemsHeader = [
@@ -46,9 +48,18 @@ export const imagesMemorieHero = [
     className: "top-1/2 left-0 w-75 opacity-50 rotate-[10deg]"
   },
   {
-    label: "Imagem cos os amigos no aniversário de gael!",
+    label: "Imagem com os amigos no aniversário de gael!",
     src: fotoAniversarioGael,
     className: "bottom-10 right-20 w-75 opacity-50 rotate-[-3deg]"
-  }
-
+  },
+  {
+    label: "Imagem com os amigos no halloween!",
+    src: fotoHalloween,
+    className: "top-15 right-20 w-80 opacity-50 rotate-[10deg]"
+  },
+  {
+    label: "Foto do gato mais lindo do mundo, Jamal!",
+    src: fotoGatoJamal,
+    className: "top-100 right-75 w-70 opacity-50 rotate-[-15deg]"
+  },
 ]
