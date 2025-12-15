@@ -30,6 +30,10 @@
   --input: 214.3 31.8% 91.4%;
   --ring: 222.2 84% 4.9%;
   --radius: 0.5rem;
+  --color-subtext: #999999;
+  --border-bottom-width: 1px;
+  --border-color: rgb(51, 51, 51);
+  --border-style: solid;
 }
 
 
@@ -42,6 +46,46 @@
   .font-neon-light {
     font-family: var(--font-neon-light);
   }
+
+  .border-bottom-default {
+    border-bottom-width: var(--border-bottom-width);
+    border-bottom-style: var(--border-style);
+    border-bottom-color: var(--border-color);
+  }
+
+
+  .balatro-fade {
+    filter: brightness(0.55) contrast(1.05) saturate(0.6);
+  }
+
+  .vignette-strong {
+    background:
+
+      linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.95) 0%,
+        rgba(0,0,0,0.7) 25%,
+        rgba(0,0,0,0) 55%
+      ),
+
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0.95) 0%,
+        rgba(0,0,0,0.7) 25%,
+        rgba(0,0,0,0) 55%
+      ),
+
+      radial-gradient(
+        ellipse at center,
+        rgba(0,0,0,0) 30%,
+        rgba(0,0,0,0.6) 55%,
+        rgba(0,0,0,0.9) 75%,
+        rgba(0,0,0,1) 100%
+      );
+  }
+
+
+  
 }
 
 html,
@@ -49,6 +93,7 @@ body {
   width: 100%;
   background-color: black;
   color: white;
+  /* scroll-behavior: smooth; */
 }
 
 body {
@@ -99,8 +144,17 @@ body {
   mask-size: 50%;
 }
 
+@utility radial-gradient {
+  background: radial-gradient(
+          circle at center,
+          #434343 0%,
+          #000 50%,
+          transparent 100%
+  );
+}
+
 #art {
-    @apply flex-col min-h-dvh p-5 relative;
+    @apply flex-col min-h-dvh p-5 relative radial-gradient;
 
     h2 {
         @apply relative md:text-[15vw] text-8xl text-nowrap leading-none text-center text-[#505050] mb-8;

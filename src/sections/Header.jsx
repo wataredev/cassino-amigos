@@ -1,6 +1,6 @@
 import React from 'react'
 import { itemsHeader } from '../constants'
-import CardNav from '../components/Components/CardNav/CardNav'
+import CardNav from '../components/CardNav/CardNav'
 import logo from '../assets/react.svg'
 
 

@@ -27,7 +27,7 @@ function Persons() {
   // }, { scope: sectionRef });
 
   return (
-    <section className="relative w-full py-32 grid grid-cols-1 md:grid-cols-2 gap-20 container">
+    <section className="relative w-full py-32 grid grid-cols-1 md:grid-cols-2 gap-20 container border-bottom-default">
 
       {/* ESQUERDA */}
       <div className="sticky top-32 h-fit">
@@ -35,7 +35,7 @@ function Persons() {
           Perguntas <br /> frequentes
         </h2>
 
-        <p className="mt-6 text-gray-500 max-w-sm">
+        <p className="mt-6 text-(--color-subtext) max-w-sm">
           As dúvidas que todo mundo tem, mas finge que não.  
           Aqui a gente responde sem enrolação (ou quase).
         </p>
@@ -50,7 +50,7 @@ function Persons() {
       <div className="space-y-32">
         <div>
           <h3 className="text-2xl font-semibold">Como funciona?</h3>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-(--color-subtext)">
             Funciona na base da amizade, do caos organizado e de boas ideias
             que surgem do nada. Cada um contribui do seu jeito. seja criando,
             zoando ou só aparecendo.
@@ -59,7 +59,7 @@ function Persons() {
 
         <div>
           <h3 className="text-2xl font-semibold">Quem são os membros?</h3>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-(--color-subtext)">
             Um grupo de amigos com personalidades bem diferentes, mas com algo
             em comum: ninguém aqui leva a vida tão a sério (exceto quando precisa).
           </p>
@@ -67,7 +67,7 @@ function Persons() {
 
         <div>
           <h3 className="text-2xl font-semibold">De onde veio o nome?</h3>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-(--color-subtext)">
             O nome surgiu em uma conversa aleatória, como quase tudo por aqui.
             Pode não fazer sentido à primeira vista, mas depois de um tempo
             passa a fazer todo.
@@ -76,7 +76,7 @@ function Persons() {
 
         <div>
           <h3 className="text-2xl font-semibold">O que tem no site?</h3>
-          <p className="mt-2 text-gray-600">
+          <p className="mt-2 text-(--color-subtext)">
             Histórias, ideias, projetos, lembranças e aquele conteúdo que só
             faz sentido pra quem faz parte. Basicamente: nosso cantinho na
             internet.

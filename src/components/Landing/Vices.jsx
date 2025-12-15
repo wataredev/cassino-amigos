@@ -3,12 +3,12 @@ import { imagesVices } from "../../constants";
 
 function Vices() {
   return (
-    <section className="relative w-full py-32 container">
+    <section className="relative w-full py-32 container border-bottom-default">
       <h2 className="text-6xl md:text-7xl font-bold leading-none">
         Vícios do Cassino
       </h2>
 
-      <p className="mt-3 text-gray-500 text-2xl pl-2">
+      <p className="mt-3 text-(--color-subtext) text-2xl pl-2">
         Não são defeitos. São características de fábrica.
       </p>
 

@@ -43,8 +43,8 @@ function Together() {
 
 
   return (
-    <div id='art' ref={sectionArt}>
-        <div className='container mx-auto h-full pt-20'>
+    <div id='art' ref={sectionArt} className='container'>
+        <div className=' mx-auto h-full pt-20'>
             <h2 className='will-fade'>Juntos</h2>
 
             <div className='content'>

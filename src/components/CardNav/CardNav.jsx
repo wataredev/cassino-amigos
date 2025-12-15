@@ -1,8 +1,8 @@
 
 import { Link, useNavigate, useLocation } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux'
-import { logout } from "../../../store/authSlice";
-import authService from "../../../appwrite/auth";
+import { logout } from "../../store/authSlice";
+import authService from "../../appwrite/auth";
 
 import './CardNav.css';
 
