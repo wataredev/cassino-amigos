@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux'
 import { login, logout } from "./store/authSlice"
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
+import SmoothScroll from './components/SmoothScroll'
 import authService from './appwrite/auth'
 import service from './appwrite/config'
 import conf from "./conf/conf"
@@ -42,6 +43,7 @@ function App() {
 
   return (
     <>
+      <SmoothScroll />
       <Header/>
       <main className=''>
         <Outlet/>

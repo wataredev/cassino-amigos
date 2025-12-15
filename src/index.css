@@ -49,18 +49,89 @@ body {
   width: 100%;
   background-color: black;
   color: white;
-  scroll-behavior: smooth;
-  /* overflow-x: hidden; */
+}
+
+body {
+  overflow: hidden;
 }
 
 @layer components {
   .container {
-    @apply mx-auto max-w-[1800px] px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
+    @apply mx-auto max-w-7xl px-16 max-xl:px-10 max-lg:px-6 max-sm:px-4;
   }
 
   .noisy {
     @apply absolute inset-0 size-full bg-[url("/images/noise.png")] opacity-40 z-10 pointer-events-none;
   }
+
+
+  .top-grid {
+    @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
+
+    > div {
+        @apply rounded-3xl overflow-hidden h-72 relative;
+    }
+
+    img {
+        @apply object-cover w-full h-full;
+    }
+  }
+
+  .bottom-grid {
+    @apply grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5;
+
+    > div {
+        @apply rounded-3xl overflow-hidden h-72 relative;
+    }
+
+    img {
+        @apply object-cover w-full h-full;
+    }
+  }
+
+}
+
+
+@utility masked-img {
+  mask-image: url("./assets/images_together/roulette-mask.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 50%;
+}
+
+#art {
+    @apply flex-col min-h-dvh p-5 relative;
+
+    h2 {
+        @apply relative md:text-[15vw] text-8xl text-nowrap leading-none text-center text-[#505050] mb-8;
+    }
+
+    .content {
+        @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-40 gap-10;
+    }
+
+    .cocktail-img {
+      @apply md:w-[75vw] w-full h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden absolute top-8 md:top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2;
+    }
+
+ 
+    .masked-container {
+        h2 {
+            @apply text-4xl md:text-5xl text-center mb-10 text-white mt-32;
+        }
+
+        div {
+            @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-5 bottom-52 left-1/2 -translate-x-1/2;
+
+            h3 {
+                @apply md:text-5xl text-2xl text-center md:w-full w-80 text-white;
+            }
+
+            p {
+                @apply text-lg text-center;
+            }
+        }
+    }
 }
 
 

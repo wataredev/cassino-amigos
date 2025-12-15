@@ -4,6 +4,12 @@ import fotoAniversarioGael from "../assets/images_hero/foto-aniversario-gael1_1.
 import fotoGatoJamal from "../assets/images_hero/gato-jamal.webp"
 import fotoHalloween from "../assets/images_hero/hallowen.webp"
 
+import aramVicio from "../assets/images_vices/aram-lol.webp"
+import discordVicio from "../assets/images_vices/discord.webp"
+import praiaVicio from "../assets/images_vices/mochila-e-afins.webp"
+import rpgVicio from "../assets/images_vices/rpg.webp"
+import progamacaoVicio from "../assets/images_vices/progamacao.webp"
+
 
 export const itemsHeader = [
     {
@@ -62,4 +68,32 @@ export const imagesMemorieHero = [
     src: fotoGatoJamal,
     className: "top-100 right-75 w-70 opacity-50 rotate-[-15deg]"
   },
+]
+
+export const imagesVices = [
+  {
+    label: "Imagem do modo ARAM do jogo League of Legends.",
+    src: aramVicio,
+    className: ""
+  },
+  {
+    label: "Imagem do aplicativo Discord.",
+    src: discordVicio,
+    className: ""
+  },
+  {
+    label: "Imagem de uma praia com objetos a frente.",
+    src: praiaVicio,
+    className: ""
+  },
+  {
+    label: "Imagem de uma mesa de RPG.",
+    src: rpgVicio,
+    className: ""
+  },
+  {
+    label: "Imagem de uma tela com o fundo relacionado a progamação.",
+    src: progamacaoVicio,
+    className: ""
+  }
 ]
