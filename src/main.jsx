@@ -7,11 +7,14 @@ import Landing from './pages/Landing.jsx'
 import { Toaster } from 'sonner'
 import Login from './pages/Login.jsx'
 import AuthLayout from './components/AuthLayout.jsx'
+import ProtectedRoute from './components/ProtectedRoute.jsx'
 import SignUp from './pages/SignUp.jsx'
 import VerificacaoEmail from './pages/VerificacaoEmail.jsx'
 import './index.css'
 import Home from './pages/Home.jsx'
+import HomeWelcome from './pages/HomeWelcome.jsx'
 import App from './App.jsx'
+import NotMember from './pages/NotMember.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,12 +28,16 @@ const router = createBrowserRouter([
     ]
   },
   {
-    path: "/home",
-    element: (
-      <AuthLayout authentication = {true}>
-        <Home/>
-      </AuthLayout>
-    )
+    element: <ProtectedRoute authentication />,
+    children: [
+      {
+        path: "/home",
+        element: <Home />,
+        children: [
+          { index: true, element: <HomeWelcome /> }
+        ]
+      }
+    ]
   },
   {
     path: "/login",
@@ -53,6 +60,14 @@ const router = createBrowserRouter([
     element: (
       <AuthLayout authentication = {false}>
         <VerificacaoEmail/>
+      </AuthLayout>
+    )
+  },
+  {
+    path:"/nao-verificado",
+    element: (
+      <AuthLayout authentication = {true}>
+        <NotMember/>
       </AuthLayout>
     )
   }

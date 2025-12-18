@@ -161,8 +161,6 @@ export function AppSidebar({...props}) {
 
   const { userDoc } = useSelector((state) => state.auth)
 
-  console.log(userDoc)
-
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>

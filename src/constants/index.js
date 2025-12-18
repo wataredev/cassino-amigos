@@ -114,86 +114,40 @@ export const sideBarContent = {
 
   navMain: [
     {
-      title: "Playground",
+      title: "Galeria de Fotos",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Teste 1",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "Teste 2",
           url: "#",
         },
         {
-          title: "Settings",
+          title: "Teste 3",
           url: "#",
         },
       ],
     },
     {
-      title: "Models",
+      title: "Votação dos Crias",
       url: "#",
       icon: Bot,
       items: [
         {
-          title: "Genesis",
+          title: "Teste 1",
           url: "#",
         },
         {
-          title: "Explorer",
+          title: "Teste 2",
           url: "#",
         },
         {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
-          title: "Tutorials",
-          url: "#",
-        },
-        {
-          title: "Changelog",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Settings",
-      url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
+          title: "Teste 3",
           url: "#",
         },
       ],
@@ -202,30 +156,25 @@ export const sideBarContent = {
 
   navSecondary: [
     {
-      title: "Support",
+      title: "Me ajuda Watare",
       url: "#",
       icon: LifeBuoy,
-    },
-    {
-      title: "Feedback",
-      url: "#",
-      icon: Send,
     },
   ],
   
   projects: [
     {
-      name: "Design Engineering",
+      name: "SEILA1",
       url: "#",
       icon: Frame,
     },
     {
-      name: "Sales & Marketing",
+      name: "SEILA2",
       url: "#",
       icon: PieChart,
     },
     {
-      name: "Travel",
+      name: "SEILA3",
       url: "#",
       icon: Map,
     },
