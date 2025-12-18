@@ -68,7 +68,7 @@ function Together() {
             <div className='content'>
                 
                 <div className='person-img'>
-                    <img src={groupImage} alt="cocktail" className='abs-center masked-img size-full object-contain' />
+                    <img src={groupImage} alt="Foto do Grupo" className='abs-center masked-img size-full object-contain' />
                 </div>
 
             </div>
