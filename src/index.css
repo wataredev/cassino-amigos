@@ -2,6 +2,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
 @font-face {
   font-family: 'NeoNeon';
   src: url('/fonts/NeonLight-Regular.otf') format('opentype');
@@ -10,32 +12,50 @@
 }
 
 :root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 47.4% 11.2%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 47.4% 11.2%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 47.4% 11.2%;
-  --primary: 222.2 47.4% 11.2%;
-  --primary-foreground: 210 40% 98%;
-  --secondary: 210 40% 96.1%;
-  --secondary-foreground: 222.2 47.4% 11.2%;
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222.2 47.4% 11.2%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 222.2 84% 4.9%;
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+
+  --card: 0 0% 6%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 0 0% 6%;
+  --popover-foreground: 0 0% 100%;
+
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 0%;
+
+  --secondary: 0 0% 12%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 0 0% 14%;
+  --muted-foreground: 0 0% 65%;
+
+  --accent: 0 0% 14%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 0 0% 80%;
+
   --radius: 0.5rem;
+
   --color-subtext: #999999;
   --border-bottom-width: 1px;
   --border-color: rgb(51, 51, 51);
   --border-style: solid;
-}
 
+  --sidebar: hsl(0 0% 6%);
+  --sidebar-foreground: hsl(0 0% 95%);
+  --sidebar-primary: hsl(0 0% 100%);
+  --sidebar-primary-foreground: hsl(0 0% 0%);
+  --sidebar-accent: hsl(0 0% 14%);
+  --sidebar-accent-foreground: hsl(0 0% 95%);
+  --sidebar-border: hsl(0 0% 20%);
+  --sidebar-ring: hsl(0 0% 80%);
+}
 
 
 @layer utilities {
@@ -52,7 +72,6 @@
     border-bottom-style: var(--border-style);
     border-bottom-color: var(--border-color);
   }
-
 
   .balatro-fade {
     filter: brightness(0.55) contrast(1.05) saturate(0.6);
@@ -84,16 +103,11 @@
       );
   }
 
-
-  
 }
 
 html,
 body {
   width: 100%;
-  background-color: black;
-  color: white;
-  /* scroll-behavior: smooth; */
 }
 
 body {
@@ -109,16 +123,15 @@ body {
     @apply absolute inset-0 size-full bg-[url("/images/noise.png")] opacity-40 z-10 pointer-events-none;
   }
 
-
   .top-grid {
-    @apply grid grid-cols-1 xl:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
+    @apply grid grid-cols-1 md:grid-cols-12 gap-5 mb-5 md:px-0 px-5;
 
     > div {
-        @apply rounded-3xl overflow-hidden h-72 relative;
+      @apply rounded-3xl overflow-hidden relative h-56 md:h-72;
     }
 
     img {
-        @apply object-cover w-full h-full;
+      @apply object-cover w-full h-full;
     }
   }
 
@@ -126,7 +139,7 @@ body {
     @apply grid grid-cols-1 md:grid-cols-12 gap-5 md:px-0 px-5;
 
     > div {
-        @apply rounded-3xl overflow-hidden h-72 relative;
+      @apply rounded-3xl overflow-hidden relative h-56 md:h-72;
     }
 
     img {
@@ -135,7 +148,6 @@ body {
   }
 
 }
-
 
 @utility masked-img {
   mask-image: url("./assets/images_together/roulette-mask.png");
@@ -156,26 +168,44 @@ body {
 #art {
     @apply flex-col min-h-dvh p-5 relative radial-gradient;
 
-    h2 {
-        @apply relative md:text-[15vw] text-8xl text-nowrap leading-none text-center text-[#505050] mb-8;
+    h2 { @apply relative md:text-[15vw] text-8xl text-nowrap leading-none text-center mb-8 w-full; }
+
+    .title-reveal {
+      position: relative;
+      width: fit-content;
+      margin-inline: auto;
+    }
+
+    .title-base {
+      color: #505050;
+      display: block;
+    }
+
+    .title-fill {
+      position: absolute;
+      inset: 0;
+      color: #ffffff;
+      display: block;
+
+      clip-path: inset(0 100% 0 0);
+      will-change: clip-path;
     }
 
     .content {
         @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-40 gap-10;
     }
 
-    .cocktail-img {
-      @apply md:w-[75vw] w-full h-[50vh] md:h-[70vh] rounded-4xl overflow-hidden absolute top-8 md:top-[65%] left-1/2 -translate-x-1/2 -translate-y-1/2;
+    .person-img { 
+      @apply w-full h-[50vh] md:h-[80vh] lg:w-[75vw] rounded-4xl overflow-hidden relative md:absolute mx-auto md:left-1/2 md:top-[45%] lg:top-[60%] md:-translate-x-1/2 md:-translate-y-1/2;
     }
 
- 
     .masked-container {
         h2 {
             @apply text-4xl md:text-5xl text-center mb-10 text-white mt-32;
         }
 
         div {
-            @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-5 bottom-52 left-1/2 -translate-x-1/2;
+            @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-35 lg:bottom-20 left-1/2 -translate-x-1/2;
 
             h3 {
                 @apply md:text-5xl text-2xl text-center md:w-full w-80 text-white;
@@ -188,12 +218,10 @@ body {
     }
 }
 
-
 :root {
   --font-neon: 'NeoNeon', sans-serif;
   --font-neon-light: 'NeoNeonLight', sans-serif;
 }
-
 
 @layer utilities {
   /* ✨ Piscar leve, sem preencher o interior */
@@ -224,3 +252,56 @@ body {
     animation: flicker 3s infinite ease-in-out;
   }
 }
+
+.card-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  transform: translateY(0);
+  transition: transform 0.35s ease;
+}
+
+.card-nav--hidden {
+  transform: translateY(-155%);
+}
+
+.dark {
+  --sidebar: hsl(240 5.9% 10%);
+  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-primary: hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground: hsl(0 0% 100%);
+  --sidebar-accent: hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
+  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-ring: hsl(217.2 91.2% 59.8%);
+}
+
+@theme inline {
+
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-ring: hsl(var(--ring));
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+

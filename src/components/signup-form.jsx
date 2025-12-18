@@ -12,6 +12,7 @@ import {
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field"
+import { useAuthInit } from "../hooks/useAuthInit"
 import { Input } from "@/components/ui/input"
 import { useForm } from 'react-hook-form'
 import authService from '../appwrite/auth';
@@ -26,6 +27,8 @@ import conf from "../conf/conf"
 import { ID, Permission, Role, Query } from "appwrite"
 
 export function SignupForm({...props}) {
+
+  useAuthInit()
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -61,6 +64,7 @@ export function SignupForm({...props}) {
               {
                 accountId: userAtual.$id,
                 nome_display: data.name,
+                email: data.email,
                 foto_url: null,
                 membro: false
               },

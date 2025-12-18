@@ -13,6 +13,7 @@ import {
   FieldGroup,
   FieldLabel,
 } from "@/components/ui/field"
+import { useAuthInit } from "../hooks/useAuthInit"
 import { Input } from "@/components/ui/input"
 import authService from '../appwrite/auth';
 import service from '../appwrite/config'
@@ -27,6 +28,8 @@ import { Query } from "appwrite";
 import conf from "../conf/conf"
 
 export function LoginForm({ className, ...props}) {
+
+  useAuthInit()
 
   const navigate = useNavigate();
   const dispatch = useDispatch();

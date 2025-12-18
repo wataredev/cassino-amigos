@@ -17,7 +17,7 @@ function Together() {
         const maskTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: sectionArt.current,
-                start,
+                start: 'top top',
                 end: 'bottom center',
                 scrub: 1.5,
                 pin: true,
@@ -26,30 +26,48 @@ function Together() {
         })
 
         maskTimeline
-        .to(context.selector('.will-fade'), {
-            opacity: 0, stagger: 0.2, ease: 'power1.inOut'
+        .to(context.selector('.title-fill'), {
+            clipPath: 'inset(0 0% 0 0)',
+            ease: 'none',
+            duration: 1,
+        }, 0)
+
+        .to({}, { duration: 0.5 })
+
+        .to(context.selector('.title-reveal'), {
+            opacity: 0,
+            ease: 'power1.inOut',
+            duration: 0.5,
         })
+
         .to(context.selector('.masked-img'), {
-            scale: 1.3, maskPosition: 'center', maskSize: '400%', duration: 1, ease: 'power1.inOut'
+            scale: 1.3,
+            maskPosition: 'center',
+            maskSize: '220%',
+            duration: 1,
+            ease: 'power1.inOut'
         })
+
         .to(context.selector('#masked-content'), {
-            opacity: 1, duration: 1, ease: 'power1.inOut'
+            opacity: 1,
+            duration: 1,
+            ease: 'power1.inOut'
         })
+
 
     }, { scope: sectionArt, dependencies: [isMobile]})
 
-
-
-
-
   return (
     <div id='art' ref={sectionArt} className='container'>
-        <div className=' mx-auto h-full pt-20'>
-            <h2 className='will-fade'>Juntos</h2>
+        <div className=' mx-auto h-full pt-10'>
+            <h2 className="title-reveal will-fade">
+                <span className="title-base">Juntos</span>
+                <span className="title-fill" aria-hidden="true">Juntos</span>
+            </h2>
 
             <div className='content'>
                 
-                <div className='cocktail-img'>
+                <div className='person-img'>
                     <img src={groupImage} alt="cocktail" className='abs-center masked-img size-full object-contain' />
                 </div>
 
@@ -58,8 +76,8 @@ function Together() {
             <div className='masked-container'>
 
                 <div id='masked-content'>
-                    <h3>Aqui, ninguém joga sozinho.</h3>
-                    <p>Não é sobre sorte. É sobre quem permanece na mesa.</p>
+                    <h3 className='font-light'>Aqui, ninguém joga sozinho.</h3>
+                    <p className='text-(--color-subtext)'>Não é sobre sorte. É sobre quem permanece na mesa.</p>
                 </div>
 
             </div>

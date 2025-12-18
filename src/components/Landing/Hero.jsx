@@ -67,9 +67,9 @@ function Hero() {
   );
 
   return (
-    <div ref={heroRef} className="hero-wrapperrelative w-full h-[125vh] overflow-hidden">
+    <div ref={heroRef} className="hero-wrapper relative w-full h-screen">
 
-      <div className="h-[125vh] w-full pointer-events-none" />
+      <div className="h-screen w-full pointer-events-none" />
 
       <video
         ref={videoRef}
@@ -124,7 +124,7 @@ function Hero() {
         </div>
       </section>
 
-      <div className="absolute bottom-0 left-0 w-full h-10 bg-gradient-to-b from-transparent via-black/80 to-black z-[50] pointer-events-none"></div>
+      <div className="absolute -bottom-2 left-0 w-full h-10 bg-gradient-to-b from-transparent via-black/80 to-black z-[50] pointer-events-none"></div>
     </div>
   );
 }

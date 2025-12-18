@@ -22,15 +22,15 @@ const router = createBrowserRouter([
         path: "/",
         element: <Landing/>
       },
-      {
-        path: "/home",
-        element: (
-          <AuthLayout authentication = {true}>
-            <Home/>
-          </AuthLayout>
-        )
-      }
     ]
+  },
+  {
+    path: "/home",
+    element: (
+      <AuthLayout authentication = {true}>
+        <Home/>
+      </AuthLayout>
+    )
   },
   {
     path: "/login",
