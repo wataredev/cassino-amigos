@@ -1,7 +1,7 @@
 import React from "react";
-import Balatro from "../Balatro/Balatro";
+import Balatro from "../animations/Balatro/Balatro";
 
-function Teste() {
+function ClosingSection() {
   return (
     <section className="relative overflow-hidden bg-black h-[50vh] md:h-[60vh] mt-24 md:mt-32">
 
@@ -27,4 +27,4 @@ function Teste() {
   );
 }
 
-export default Teste;
+export default ClosingSection;

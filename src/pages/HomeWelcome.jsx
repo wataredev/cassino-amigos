@@ -1,5 +1,5 @@
 import React from 'react'
-import GradientText from '../components/GradientText/GradientText'
+import GradientText from '../components/animations/GradientText/GradientText'
 import { useSelector } from "react-redux";
 
 function HomeWelcome() {
@@ -23,11 +23,6 @@ function HomeWelcome() {
         >
         CASSINO
         </GradientText>
-
-
-
-
-
 
     </div>
   )

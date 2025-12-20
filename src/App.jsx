@@ -1,8 +1,8 @@
 import gsap from 'gsap'
 import { ScrollTrigger, SplitText } from 'gsap/all'
 import { Outlet } from 'react-router'
-import Header from "./sections/Header"
-import Footer from "./sections/Footer"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 import SmoothScroll from './components/SmoothScroll'
 import { useAuthInit } from "../src/hooks/useAuthInit"
 

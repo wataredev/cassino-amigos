@@ -1,6 +1,5 @@
 import React from 'react'
-import { itemsHeader } from '../constants'
-import CardNav from '../components/CardNav/CardNav'
+import CardNav from './CardNav/CardNav'
 import logo from '../assets/icone-cassino.svg'
 
 function Header() {
@@ -8,7 +7,6 @@ function Header() {
     <CardNav
       logo={logo}
       logoAlt="Company Logo"
-      items={itemsHeader}
       baseColor="transparent"
       menuColor="#fff"
       buttonBgColor="transparent"

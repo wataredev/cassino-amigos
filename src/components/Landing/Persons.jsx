@@ -86,7 +86,7 @@ function Persons() {
         </button>
       </div>
 
-      <div className="space-y-32 md:space-y-32 space-y-16">
+      <div className="md:space-y-32 space-y-16">
         <div className="faq-item">
           <h3 className="text-2xl">Como funciona?</h3>
           <p className="mt-2 text-(--color-subtext)">

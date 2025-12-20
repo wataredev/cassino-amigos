@@ -4,13 +4,6 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@font-face {
-  font-family: 'NeoNeon';
-  src: url('/fonts/NeonLight-Regular.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-}
-
 :root {
   --background: 0 0% 0%;
   --foreground: 0 0% 100%;
@@ -218,13 +211,7 @@ body {
     }
 }
 
-:root {
-  --font-neon: 'NeoNeon', sans-serif;
-  --font-neon-light: 'NeoNeonLight', sans-serif;
-}
-
 @layer utilities {
-  /* ✨ Piscar leve, sem preencher o interior */
   @keyframes flicker {
     0%, 100% {
       opacity: 1;
@@ -241,10 +228,9 @@ body {
     }
   }
 
-  /* 🔴 Contorno neon vermelho suave */
   .neon-stroke {
-    color: transparent; /* sem preenchimento */
-    -webkit-text-stroke: 1.5px #ffffff; /* borda vermelha fina */
+    color: transparent;
+    -webkit-text-stroke: 1.5px #ffffff;
     text-shadow:
       0 0 2px rgba(255, 255, 255, 0.7),
       0 0 4px rgba(255, 255, 255, 0.5),

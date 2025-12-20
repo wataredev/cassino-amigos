@@ -34,8 +34,6 @@ export class AuthService {
     async login({email, password}) {
         try {
 
-            // ATÉ TER UM BOTÃO DE DESLOGAR await this.account.deleteSession("current")
-
             return await this.account.createEmailPasswordSession(
                 email,
                 password

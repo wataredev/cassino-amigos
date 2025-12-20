@@ -1,10 +1,9 @@
 import { useRef, useLayoutEffect, useState } from "react";
-import LightRays from "./LightRays/LightRays";
+import LightRays from "../animations/LightRays/LightRays";
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
-import SplitText from "../TextAnimations/SplitText/SplitText";
+import SplitText from "../animations/SplitText/SplitText";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function Hero() {
   const heroRef = useRef(null);
@@ -81,9 +80,9 @@ function Hero() {
         className="absolute inset-0 w-full h-full object-cover -z-10 pointer-events-none"
       />
 
-      <div className="noisy absolute inset-0 z-[30] pointer-events-none"></div>
+      <div className="noisy absolute inset-0 z-30 pointer-events-none"></div>
 
-      <div className="absolute inset-0 z-[40] pointer-events-none">
+      <div className="absolute inset-0 z-40 pointer-events-none">
         <LightRays
           key={lightKey}
           onInit={(instance) => (lightRaysRef.current = instance)}
@@ -99,7 +98,7 @@ function Hero() {
         />
       </div>
 
-      <section className="absolute top-0 left-0 w-full h-screen flex items-center justify-center z-[60]">
+      <section className="absolute top-0 left-0 w-full h-screen flex items-center justify-center z-60">
 
         <div className="flex flex-col items-center justify-center text-center w-full">
           <h3 className="text-gray-400 tracking-widest text-sm md:text-base mb-2 uppercase">
@@ -124,7 +123,7 @@ function Hero() {
         </div>
       </section>
 
-      <div className="absolute -bottom-2 left-0 w-full h-10 bg-gradient-to-b from-transparent via-black/80 to-black z-[50] pointer-events-none"></div>
+      <div className="absolute -bottom-2 left-0 w-full h-10 bg-gradient-to-b from-transparent via-black/80 to-black z-50 pointer-events-none"></div>
     </div>
   );
 }
