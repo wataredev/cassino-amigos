@@ -3,19 +3,17 @@ import LightRays from "../animations/LightRays/LightRays";
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
 import SplitText from "../animations/SplitText/SplitText";
+import { Button, buttonVariants} from "../ui/button"
 import gsap from "gsap";
 
 function Hero() {
   const heroRef = useRef(null);
   const videoRef = useRef(null);
-  const imagesContainerRef = useRef(null);
   const lightRaysRef = useRef(null);
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
   const [showLight, setShowLight] = useState(false);
   const [lightKey, setLightKey] = useState(0);
-
-  const handleAnimationComplete = () => console.log("All letters animated!");
 
   /**
    * Cleanup ao desmontar (saindo da rota)
@@ -114,12 +112,12 @@ function Hero() {
             splitType="chars"
             from={{ opacity: 0, y: 40 }}
             to={{ opacity: 1, y: 0 }}
-            onLetterAnimationComplete={handleAnimationComplete}
           />
 
-          <button className="mt-8 px-10 py-3 border border-gray-400/40 text-gray-300 hover:text-white hover:border-white transition-all rounded-full backdrop-blur-sm">
+          <Button variant="club" size="club" className={"mt-8"}>
             Entrar no Clube
-          </button>
+          </Button>
+
         </div>
       </section>
 

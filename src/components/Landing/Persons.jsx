@@ -2,7 +2,7 @@ import { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import SplitText from "gsap/SplitText";
-
+import { Button, buttonVariants} from "../ui/button"
 
 function Persons() {
 
@@ -11,7 +11,7 @@ function Persons() {
   useGSAP((context) => {
     const h2 = context.selector("h2");
     const introP = context.selector("p")[0];
-    const button = context.selector("button");
+    const button = context.selector('gsap-button-faq');
     const faqItems = context.selector(".faq-item");
 
     const titleSplit = new SplitText(h2, {
@@ -81,9 +81,9 @@ function Persons() {
           Aqui a gente responde sem enrolação (ou quase).
         </p>
 
-        <button className="mt-8 px-6 py-3 border border-black rounded-full">
+        <Button variant="club" size="club" className={"mt-8 gsap-button-faq"}>
           Falar com a gente
-        </button>
+        </Button>
       </div>
 
       <div className="md:space-y-32 space-y-16">

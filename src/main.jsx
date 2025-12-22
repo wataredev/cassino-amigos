@@ -15,6 +15,7 @@ import Home from './pages/Home.jsx'
 import HomeWelcome from './pages/HomeWelcome.jsx'
 import App from './App.jsx'
 import NotMember from './pages/NotMember.jsx'
+import Gallery from './pages/Gallery.jsx'
 
 const router = createBrowserRouter([
   {
@@ -34,9 +35,16 @@ const router = createBrowserRouter([
         path: "/home",
         element: <Home />,
         children: [
-          { index: true, element: <HomeWelcome /> }
+          { 
+            index: true, 
+            element: <HomeWelcome /> 
+          },
+          {
+            path: "galeria",
+            element: <Gallery/>,
+          }
         ]
-      }
+      },
     ]
   },
   {

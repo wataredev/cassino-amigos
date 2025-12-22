@@ -19,11 +19,13 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
+        club: "border border-gray-400/40 text-gray-300 rounded-full backdrop-blur-sm transition-all hover:text-white hover:border-white",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
         sm: "h-8 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5",
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
+        club: "h-auto px-10 py-3 rounded-full",
         icon: "size-9",
         "icon-sm": "size-8",
         "icon-lg": "size-10",

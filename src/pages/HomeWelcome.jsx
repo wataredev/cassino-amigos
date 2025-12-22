@@ -3,8 +3,9 @@ import GradientText from '../components/animations/GradientText/GradientText'
 import { useSelector } from "react-redux";
 
 function HomeWelcome() {
+  
+  const { userDoc } = useSelector((state) => state.auth)
 
-    const { userDoc } = useSelector((state) => state.auth)
   return (
     <div className='h-full w-full flex items-center justify-center flex-col'>
 

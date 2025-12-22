@@ -50,23 +50,9 @@ export const sideBarContent = {
   navMain: [
     {
       title: "Galeria de Fotos",
-      url: "#",
+      url: "galeria",
       icon: SquareTerminal,
       isActive: true,
-      items: [
-        {
-          title: "Teste 1",
-          url: "#",
-        },
-        {
-          title: "Teste 2",
-          url: "#",
-        },
-        {
-          title: "Teste 3",
-          url: "#",
-        },
-      ],
     },
     {
       title: "Votação dos Crias",

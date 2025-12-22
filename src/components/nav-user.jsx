@@ -39,8 +39,6 @@ import service from "../appwrite/config"
 export function NavUser({ user }) {
   const { isMobile } = useSidebar()
 
-  console.log(user)
-
   const inputFileRef = useRef(null)
   const navigate = useNavigate()
   const dispatch = useDispatch()

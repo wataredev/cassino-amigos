@@ -31,6 +31,7 @@ import {
 import { useSelector } from "react-redux";
 import { sideBarContent } from "../constants"
 import logo from '../assets/icone-cassino.svg'
+import { Link } from "react-router-dom";
 
 const data = {
   user: {
@@ -167,7 +168,8 @@ export function AppSidebar({...props}) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+
+              <Link to={"/home"}>
                 <div
                   className="text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg">
                   <img src={logo} alt="Logo" className="bg-transparent" />
@@ -176,7 +178,8 @@ export function AppSidebar({...props}) {
                   <span className="truncate font-medium">Cassino</span>
                   <span className="truncate text-xs">Clube dos Amigos</span>
                 </div>
-              </a>
+              </Link>
+
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
