@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 
 import DomeGallery from "../components/Landing/DomeGallery/DomeGallery"
 import UploadImageDialog from "../components/UploadImageDialog"
+import GradientText from '../components/animations/GradientText/GradientText'
 
 function Gallery() {
   const [uploading, setUploading] = useState(false)
@@ -60,14 +61,34 @@ function Gallery() {
   if (loading) return <p>Carregando galeria...</p>
 
   return (
-    <div className="p-6 space-y-6">
-      <UploadImageDialog
-        onUpload={handleUpload}
-        uploading={uploading}
-      />
+    <div className="w-full h-full">
 
-      <div style={{ width: "100vw", height: "100vh" }}>
-        <DomeGallery images={images} />
+      <div className="flex justify-between px-5">
+
+        <GradientText
+          colors={[
+            "#6AE3B4",
+            "#5B6EFF",
+            "#6AE3B4",
+            "#5B6EFF",
+            "#6AE3B4"
+          ]}
+          animationSpeed={3}
+          showBorder={false}
+          className="text-4xl"
+          >
+          Galeria do Cassino
+        </GradientText>
+
+        <UploadImageDialog
+          onUpload={handleUpload}
+          uploading={uploading}
+        />
+
+      </div>
+
+      <div className="w-full h-dvh">
+        <DomeGallery images={images} grayscale={false} overlayBlurColor={'#000000'} fit={0.6}/>
       </div>
     </div>
   )

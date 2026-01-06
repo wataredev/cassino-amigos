@@ -56,22 +56,9 @@ export const sideBarContent = {
     },
     {
       title: "Votação dos Crias",
-      url: "#",
+      url: "roleta",
       icon: Bot,
-      items: [
-        {
-          title: "Teste 1",
-          url: "#",
-        },
-        {
-          title: "Teste 2",
-          url: "#",
-        },
-        {
-          title: "Teste 3",
-          url: "#",
-        },
-      ],
+      isActive: true,
     },
   ],
 

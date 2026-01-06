@@ -62,6 +62,10 @@ export default function UploadImageDialog({ onUpload, uploading }) {
     service.getAllUsers().then(setUsers)
   }, [])
 
+  useEffect(() => {
+    console.log("Users atualizadosaa:", users)
+  }, [users])
+
   function onSubmit(data) {
     if (!data.files?.length) return
 
@@ -83,7 +87,7 @@ export default function UploadImageDialog({ onUpload, uploading }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="gap-2">
+        <Button className="gap-2" variant="club" size="club">
           <ImagePlus size={18} />
           Adicionar imagens
         </Button>

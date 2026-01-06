@@ -16,6 +16,7 @@ import HomeWelcome from './pages/HomeWelcome.jsx'
 import App from './App.jsx'
 import NotMember from './pages/NotMember.jsx'
 import Gallery from './pages/Gallery.jsx'
+import RouletteFriends from './pages/RouletteFriends.jsx'
 
 const router = createBrowserRouter([
   {
@@ -41,7 +42,11 @@ const router = createBrowserRouter([
           },
           {
             path: "galeria",
-            element: <Gallery/>,
+            element: <Gallery/>
+          },
+          {
+            path: "roleta",
+            element: <RouletteFriends/>
           }
         ]
       },
