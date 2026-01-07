@@ -1,4 +1,4 @@
-# Cassino
+<video src="./public/videos/cassino-apresentacao.mp4" controls muted loop width="700"></video>
 
 <div align="center">
   
@@ -7,16 +7,6 @@ Não é um produto. Não é uma startup.
 É um lugar onde ideias, histórias e projetos coexistem.
 
 </div>
-
----
-
-## Preview
-
-Adicione aqui um vídeo curto em loop (ou GIF) mostrando o site em funcionamento.
-
-```md
-![Cassino Preview](./cassino-apresentacao.mp4)
-```
 
 ## O que é o Cassino?
 
@@ -35,8 +25,6 @@ Adicione aqui um vídeo curto em loop (ou GIF) mostrando o site em funcionamento
 - Memórias
 
 **É um arquivo em movimento.**
-
----
 
 ## Funcionalidades Atuais
 
@@ -66,8 +54,6 @@ A lógica da galeria está em um repositório separado:
 
 As ideias mudam, as histórias crescem e o espaço se transforma junto com quem participa.
 
----
-
 ## Tecnologias
 
 O projeto foi construído com foco em experiência visual e interação:
@@ -77,8 +63,6 @@ O projeto foi construído com foco em experiência visual e interação:
 - **TailwindCSS** — Estilização utilitária
 - **Vite** — Build tool rápida
 - **Canvas / efeitos gráficos** — Inspirado em Balatro
-
----
 
 ## Filosofia
 
@@ -94,15 +78,11 @@ Cassino não é sobre performance, métricas ou crescimento.
 Se fizer sentido para quem está aqui, ele continua existindo.  
 Se não, muda.
 
----
-
 ## Estado do projeto
 
 - Em desenvolvimento contínuo
 - Sem data de conclusão
 - Sem versão final
-
----
 
 <div align="center">
 
