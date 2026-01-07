@@ -1,4 +1,6 @@
-<video src="./public/videos/cassino-apresentacao.mp4" controls muted loop width="700"></video>
+<p align="center">
+  <img src="./public/videos/cassino-gif.gif" width="700" alt="Um recorte do Cassino em movimento" />
+</p>
 
 <div align="center">
   
