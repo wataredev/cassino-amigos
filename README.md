@@ -1,5 +1,14 @@
 <p align="center">
-  <img src="./public/videos/cassino-gif.gif" width="700" alt="Um recorte do Cassino em movimento" />
+  <img
+    src="./public/videos/cassino-gif.gif"
+    width="700"
+    alt="Um recorte do Cassino em movimento"
+    style="
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.08);
+    "
+  />
 </p>
 
 <div align="center">
