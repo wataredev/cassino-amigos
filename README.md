@@ -47,15 +47,6 @@ Ela usa uma função própria para:
 A lógica da galeria está em um repositório separado:  
 [https://github.com/wataredev/upload-cloudinary](https://github.com/wataredev/upload-cloudinary)  
 
-## Juntos
-
-> *Aqui, ninguém joga sozinho.  
-> Não é sobre sorte. É sobre quem permanece na mesa.*
-
-## Seguimos
-
-As ideias mudam, as histórias crescem e o espaço se transforma junto com quem participa.
-
 ## Tecnologias
 
 O projeto foi construído como um espaço de estudo, experimentação e expressão visual:
