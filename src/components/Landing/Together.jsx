@@ -58,29 +58,28 @@ function Together() {
     }, { scope: sectionArt, dependencies: [isMobile]})
 
   return (
-    <div id='art' ref={sectionArt} className='container'>
-        <div className=' mx-auto h-full pt-10'>
+    <div id='art' ref={sectionArt} className='container flex items-center justify-center flex-col'>
+
+        <div className='content'>
+
             <h2 className="title-reveal will-fade">
                 <span className="title-base">Juntos</span>
                 <span className="title-fill" aria-hidden="true">Juntos</span>
             </h2>
-
-            <div className='content'>
-                
-                <div className='person-img'>
-                    <img src={groupImage} alt="Foto do Grupo" className='abs-center masked-img size-full object-contain' />
-                </div>
-
+            
+            <div className='person-img'>
+                <img src={groupImage} alt="Foto do Grupo" className='abs-center masked-img size-full object-contain' />
             </div>
 
-            <div className='masked-container'>
+        </div>
 
-                <div id='masked-content'>
-                    <h3 className='font-light'>Aqui, ninguém joga sozinho.</h3>
-                    <p className='text-(--color-subtext)'>Não é sobre sorte. É sobre quem permanece na mesa.</p>
-                </div>
+        <div className='masked-container'>
 
+            <div id='masked-content'>
+                <h3 className='font-light'>Aqui, ninguém joga sozinho.</h3>
+                <p className='text-(--color-subtext)'>Não é sobre sorte. É sobre quem permanece na mesa.</p>
             </div>
+
         </div>
     </div>
   )

@@ -178,10 +178,36 @@ body {
 }
 
 @utility masked-img {
+  -webkit-mask-image: url("./assets/images_together/roulette-mask.png");
   mask-image: url("./assets/images_together/roulette-mask.png");
+  -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
+  -webkit-mask-position: center;
   mask-position: center;
-  mask-size: 50%;
+
+  -webkit-mask-size: 80%;
+  mask-size: 80%;
+}
+
+@media (min-width: 640px) {
+  .masked-img {
+    -webkit-mask-size: 60%;
+    mask-size: 60%;
+  }
+}
+
+@media (min-width: 768px) {
+  .masked-img {
+    -webkit-mask-size: 55%;
+    mask-size: 55%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .masked-img {
+    -webkit-mask-size: 50%;
+    mask-size: 50%;
+  }
 }
 
 @utility radial-gradient {
@@ -194,56 +220,53 @@ body {
 }
 
 #art {
-    @apply flex-col min-h-dvh p-5 relative radial-gradient;
+  @apply flex-col h-[60vh] md:h-screen p-5 radial-gradient;
+ 
+  h2 { @apply text-8xl md:text-[15vw]  text-nowrap leading-none text-center w-full mx-auto absolute top-[-40%]; }
 
-    h2 { @apply relative md:text-[15vw] text-8xl text-nowrap leading-none text-center mb-8 w-full; }
+  .title-reveal {
+    position: relative;
+    width: fit-content;
+    margin-inline: auto;
+  }
 
-    .title-reveal {
-      position: relative;
-      width: fit-content;
-      margin-inline: auto;
-    }
+  .title-base {
+    color: #505050;
+    display: block;
+  }
 
-    .title-base {
-      color: #505050;
-      display: block;
-    }
+  .title-fill {
+    position: absolute;
+    inset: 0;
+    color: #ffffff;
+    display: block;
 
-    .title-fill {
-      position: absolute;
-      inset: 0;
-      color: #ffffff;
-      display: block;
+    clip-path: inset(0 100% 0 0);
+    will-change: clip-path;
+  }
 
-      clip-path: inset(0 100% 0 0);
-      will-change: clip-path;
-    }
+  .content {
+      @apply flex flex-col space-y-5 relative w-full h-full items-center justify-center;
+  }
 
-    .content {
-        @apply flex md:flex-row flex-col justify-between md:mb-16 md:mt-0 mt-40 gap-10;
-    }
+  .person-img { 
+    @apply w-full rounded-4xl overflow-hidden absolute mx-auto;
+  }
 
-    .person-img { 
-      @apply w-full h-[50vh] md:h-[80vh] lg:w-[75vw] rounded-4xl overflow-hidden relative md:absolute mx-auto md:left-1/2 md:top-[45%] lg:top-[60%] md:-translate-x-1/2 md:-translate-y-1/2;
-    }
+  .masked-container {
 
-    .masked-container {
-        h2 {
-            @apply text-4xl md:text-5xl text-center mb-10 text-white mt-32;
-        }
+      div {
+          @apply w-[80%] md:w-full opacity-0 md:px-0 space-y-2 md:space-y-5 absolute bottom-40 md:bottom-35 lg:bottom-20 left-1/2 -translate-x-1/2;
 
-        div {
-            @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-35 lg:bottom-20 left-1/2 -translate-x-1/2;
+          h3 {
+              @apply text-2xl md:text-5xl text-center w-full text-white left-1/2;
+          }
 
-            h3 {
-                @apply md:text-5xl text-2xl text-center md:w-full w-80 text-white;
-            }
-
-            p {
-                @apply text-lg text-center;
-            }
-        }
-    }
+          p {
+              @apply text-base md:text-lg text-center;
+          }
+      }
+  }
 }
 
 @layer utilities {
