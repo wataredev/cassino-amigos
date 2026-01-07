@@ -1,12 +1,111 @@
-# React + Vite
+# Cassino
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<div align="center">
+  
+**Um espaço digital entre amigos.**  
+Não é um produto. Não é uma startup.  
+É um lugar onde ideias, histórias e projetos coexistem.
 
-Currently, two official plugins are available:
+</div>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Preview
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Adicione aqui um vídeo curto em loop (ou GIF) mostrando o site em funcionamento.
+
+```md
+![Cassino Preview](./cassino-apresentacao.mp4)
+```
+
+## O que é o Cassino?
+
+**Cassino** é um projeto pessoal criado para servir como um espaço vivo de um grupo de amigos.
+
+- Não existe "versão final"
+- Não existe um objetivo comercial
+- O site muda conforme as pessoas que fazem parte dele mudam
+
+### Aqui entram:
+
+- Projetos que surgem do nada
+- Ideias que não cabem em outros lugares
+- Histórias
+- Experimentos visuais
+- Memórias
+
+**É um arquivo em movimento.**
+
+---
+
+## Funcionalidades Atuais
+
+### Roleta
+
+Ela mistura imagens, temas, ideias e conteúdo de forma aleatória.  
+Não é um jogo de sorte — é um jeito de explorar o que existe aqui.
+
+### Galeria
+
+A galeria guarda momentos, projetos e registros do grupo.
+
+Ela usa uma função própria para:
+- Organizar imagens
+- Filtrar conteúdos
+- Permitir expansão futura
+
+A lógica da galeria está em um repositório separado:  
+[https://github.com/wataredev/upload-cloudinary](https://github.com/wataredev/upload-cloudinary)  
+
+## Juntos
+
+> *Aqui, ninguém joga sozinho.  
+> Não é sobre sorte. É sobre quem permanece na mesa.*
+
+## Seguimos
+
+As ideias mudam, as histórias crescem e o espaço se transforma junto com quem participa.
+
+---
+
+## Tecnologias
+
+O projeto foi construído com foco em experiência visual e interação:
+
+- **React** — Interface componentizada
+- **GSAP** — ScrollTrigger, timelines e máscaras
+- **TailwindCSS** — Estilização utilitária
+- **Vite** — Build tool rápida
+- **Canvas / efeitos gráficos** — Inspirado em Balatro
+
+---
+
+## Filosofia
+
+Cassino não é sobre performance, métricas ou crescimento.
+
+### É sobre:
+
+- Criar sem pressão
+- Testar coisas novas
+- Registrar momentos
+- Construir algo com pessoas
+
+Se fizer sentido para quem está aqui, ele continua existindo.  
+Se não, muda.
+
+---
+
+## Estado do projeto
+
+- Em desenvolvimento contínuo
+- Sem data de conclusão
+- Sem versão final
+
+---
+
+<div align="center">
+
+**Feito por amigos, para amigos**
+
+</div>

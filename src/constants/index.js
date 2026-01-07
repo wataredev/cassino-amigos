@@ -55,7 +55,7 @@ export const sideBarContent = {
       isActive: true,
     },
     {
-      title: "Votação dos Crias",
+      title: "Roleta dos Membros",
       url: "roleta",
       icon: Bot,
       isActive: true,

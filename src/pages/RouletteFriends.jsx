@@ -16,6 +16,7 @@ function RouletteFriends() {
         image: {
           uri: user.foto_url === null ? "https://marketplace.canva.com/Dz63E/MAF4KJDz63E/1/tl/canva-user-icon-MAF4KJDz63E.png" : user.foto_url,
           sizeMultiplier: 0.6,
+          offsetY: 120,
           className: "roulette-image"
         },
       }))
