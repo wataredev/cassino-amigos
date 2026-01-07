@@ -1,14 +1,5 @@
 <p align="center">
-  <img
-    src="./public/videos/cassino-gif.gif"
-    width="700"
-    alt="Um recorte do Cassino em movimento"
-    style="
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      border: 1px solid rgba(255,255,255,0.08);
-    "
-  />
+  <img src="./public/videos/cassino-gif.gif" width="700" alt="Um recorte do Cassino em movimento" />
 </p>
 
 <div align="center">
@@ -67,13 +58,25 @@ As ideias mudam, as histórias crescem e o espaço se transforma junto com quem 
 
 ## Tecnologias
 
-O projeto foi construído com foco em experiência visual e interação:
+O projeto foi construído como um espaço de estudo, experimentação e expressão visual:
 
-- **React** — Interface componentizada
-- **GSAP** — ScrollTrigger, timelines e máscaras
+### Front-end & Experiência
+- **React** — Estrutura e composição da interface
+- **GSAP** — Animações, ScrollTrigger, timelines e máscaras
 - **TailwindCSS** — Estilização utilitária
-- **Vite** — Build tool rápida
-- **Canvas / efeitos gráficos** — Inspirado em Balatro
+- **Radix UI** — Componentes acessíveis e não-opinativos
+- **Efeitos gráficos / Figma / Canvas** — Inspirado em *Balatro*
+
+### Estado & Navegação
+- **Redux Toolkit** — Gerenciamento de estado
+- **React Router** — Navegação e rotas
+
+### Back-end & Infra
+- **Appwrite** — Autenticação, banco de dados, permissões e regras de acesso
+- **Cloudinary** — Upload, otimização e entrega de mídia
+
+### Tooling
+- **Vite** — Build tool rápida e ambiente de desenvolvimento
 
 ## Filosofia
 
