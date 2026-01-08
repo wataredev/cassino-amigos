@@ -17,8 +17,8 @@ function Together() {
         const maskTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: sectionArt.current,
-                start: 'top top',
-                end: 'bottom center',
+                start: start,
+                end: isMobile ? '+=100%' : 'bottom center',
                 scrub: 1.5,
                 pin: true,
 
@@ -58,7 +58,7 @@ function Together() {
     }, { scope: sectionArt, dependencies: [isMobile]})
 
   return (
-    <div id='art' ref={sectionArt} className='container flex items-center justify-center flex-col'>
+    <div id='art' ref={sectionArt} className='container flex items-center justify-center flex-col py-20'>
 
         <div className='content'>
 

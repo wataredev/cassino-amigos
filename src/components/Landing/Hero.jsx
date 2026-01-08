@@ -1,9 +1,10 @@
 import { useRef, useLayoutEffect, useState } from "react";
 import LightRays from "../animations/LightRays/LightRays";
+import { useNavigate } from "react-router-dom"
 import { useGSAP } from "@gsap/react";
 import { useMediaQuery } from "react-responsive";
 import SplitText from "../animations/SplitText/SplitText";
-import { Button, buttonVariants} from "../ui/button"
+import { Button } from "../ui/button"
 import gsap from "gsap";
 
 function Hero() {
@@ -11,6 +12,8 @@ function Hero() {
   const videoRef = useRef(null);
   const lightRaysRef = useRef(null);
   const isMobile = useMediaQuery({ maxWidth: 767 });
+
+  const navigate = useNavigate()
 
   const [lightKey, setLightKey] = useState(0);
 
@@ -81,7 +84,7 @@ function Hero() {
 
           <SplitText
             text="CASSINO"
-            className="neon-stroke text-6xl md:text-9xl text-transparent text-center"
+            className="neon-stroke text-6xl md:text-9xl text-center font-light tracking-[0.25em]"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -90,7 +93,7 @@ function Hero() {
             to={{ opacity: 1, y: 0 }}
           />
 
-          <Button variant="club" size="club" className={"mt-8"}>
+          <Button variant="club" size="club" className={"mt-8"} onClick={() => navigate("/login")}>
             Entrar no Clube
           </Button>
 
