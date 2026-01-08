@@ -12,31 +12,7 @@ function Hero() {
   const lightRaysRef = useRef(null);
   const isMobile = useMediaQuery({ maxWidth: 767 });
 
-  const [showLight, setShowLight] = useState(false);
   const [lightKey, setLightKey] = useState(0);
-
-  /**
-   * Cleanup ao desmontar (saindo da rota)
-   */
-  // useLayoutEffect(() => {
-  //   return () => {
-  //     ScrollTrigger.getAll().forEach((t) => t.kill());
-  //     if (videoRef.current) gsap.killTweensOf(videoRef.current);
-  //     if (lightRaysRef.current?.destroy) lightRaysRef.current.destroy();
-  //   };
-  // }, []);
-
-  /**
-   * Garante que o LightRays será renderizado só depois do layout
-   */
-  // useLayoutEffect(() => {
-  //   requestAnimationFrame(() => {
-  //     requestAnimationFrame(() => {
-  //       setLightKey((prev) => prev + 1);
-  //       setShowLight(true);
-  //     });
-  //   });
-  // }, []);
 
   useGSAP(
     () => {
@@ -86,10 +62,10 @@ function Hero() {
           onInit={(instance) => (lightRaysRef.current = instance)}
           raysOrigin="top-center"
           raysColor="#ffffff"
-          raysSpeed={1.5}
+          raysSpeed={isMobile ? 0.7 : 1.2}
           lightSpread={0.8}
           rayLength={2}
-          followMouse={true}
+          followMouse={!isMobile}
           mouseInfluence={0.1}
           noiseAmount={0.1}
           distortion={0.05}
@@ -121,7 +97,7 @@ function Hero() {
         </div>
       </section>
 
-      <div className="absolute -bottom-2 left-0 w-full h-10 bg-gradient-to-b from-transparent via-black/80 to-black z-50 pointer-events-none"></div>
+      <div className="absolute -bottom-7 left-0 w-full h-10 bg-gradient-to-b from-transparent via-black/80 to-black z-50 pointer-events-none"></div>
     </div>
   );
 }
