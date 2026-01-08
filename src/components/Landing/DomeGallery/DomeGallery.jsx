@@ -1,7 +1,3 @@
-/*
-	Installed from https://reactbits.dev/default/
-*/
-
 import { useEffect, useMemo, useRef, useCallback } from 'react';
 import { useGesture } from '@use-gesture/react';
 import './DomeGallery.css';

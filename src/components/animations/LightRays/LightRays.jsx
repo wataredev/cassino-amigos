@@ -1,7 +1,3 @@
-/*
-	Installed from https://reactbits.dev/default/
-*/
-
 import { useRef, useEffect, useState } from 'react';
 import { Renderer, Program, Triangle, Mesh } from 'ogl';
 import './LightRays.css';
