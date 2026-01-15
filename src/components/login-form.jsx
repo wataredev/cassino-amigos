@@ -98,16 +98,11 @@ export function LoginForm({ className, ...props}) {
             <FieldGroup>
               <Field>
                 <FieldLabel htmlFor="email">Email</FieldLabel>
-                <Input id="email" type="email" placeholder="m@example.com" {...register("email", { required: true })} />
+                <Input id="email" type="email" placeholder="email@exemplo.com" {...register("email", { required: true })} />
               </Field>
               <Field>
                 <div className="flex items-center">
                   <FieldLabel htmlFor="password">Senha</FieldLabel>
-                  <a
-                    href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline">
-                    Esqueceu a Senha ?
-                  </a>
                 </div>
                 <Input id="password" type="password" {...register("password", { required: true })} />
               </Field>

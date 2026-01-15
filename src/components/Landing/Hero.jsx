@@ -17,8 +17,10 @@ function Hero() {
 
   const [lightKey, setLightKey] = useState(0);
 
-  useGSAP(
-    () => {
+  useGSAP(() => {
+
+      if (isMobile) return;
+
       const hero = heroRef.current;
       const video = videoRef.current;
       if (!hero || !video) return;
@@ -54,6 +56,7 @@ function Hero() {
         muted
         playsInline
         preload="auto"
+        autoPlay={isMobile}
         className="absolute inset-0 w-full h-full object-cover -z-10 pointer-events-none"
       />
 
