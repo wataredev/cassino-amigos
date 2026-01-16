@@ -24,9 +24,6 @@ export default function ProfileAvatar({ userDoc }) {
     enviarFoto(file);
   };
 
-    console.log(userData)
-    console.log(userDoc)
-
   async function enviarFoto(file) {
 
     try {

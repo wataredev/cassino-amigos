@@ -62,10 +62,6 @@ export default function UploadImageDialog({ onUpload, uploading }) {
     service.getAllUsers().then(setUsers)
   }, [])
 
-  useEffect(() => {
-    console.log("Users atualizadosaa:", users)
-  }, [users])
-
   function onSubmit(data) {
     if (!data.files?.length) return
 

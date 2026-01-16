@@ -84,7 +84,7 @@ function Vices() {
         {imageElements.top.map((image, index) => (
           <div
             key={`top-${index}`}
-            className={index === 1 ? "md:col-span-6" : "md:col-span-3"}
+            className={index === 1 ? "md:col-span-4" : "md:col-span-4"}
           >
             <div className="noisy" />
             <img

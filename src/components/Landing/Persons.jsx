@@ -11,7 +11,7 @@ function Persons() {
   useGSAP((context) => {
     const h2 = context.selector("h2");
     const introP = context.selector("p")[0];
-    const button = context.selector('gsap-button-faq');
+    const button = context.selector('.gsap-button-faq');
     const faqItems = context.selector(".faq-item");
 
     const titleSplit = new SplitText(h2, {
@@ -44,11 +44,15 @@ function Persons() {
       },
       "-=0.4"
     )
-    .from(
+    .fromTo(
       button,
       {
         opacity: 0,
         y: 15,
+      },
+      {
+        opacity: 1,
+        y: 0,
         duration: 0.5,
         ease: "power2.out",
       },
@@ -81,9 +85,9 @@ function Persons() {
           Aqui a gente responde sem enrolação (ou quase).
         </p>
 
-        <Button variant="club" size="club" className={"mt-8 gsap-button-faq"}>
+        <button className="border border-gray-400/40 text-gray-300 rounded-full backdrop-blur-sm transition-all hover:text-white hover:border-white mt-8 gsap-button-faq h-auto px-10 py-3">
           Falar com a gente
-        </Button>
+        </button>
       </div>
 
       <div className="md:space-y-32 space-y-16">

@@ -63,8 +63,6 @@ export function LoginForm({ className, ...props}) {
 
           const userDoc = res.documents[0];
 
-          console.log("USERDOOOC", userDoc)
-
           if (!userDoc) {
             toast.error("Erro: perfil não encontrado no Appwrite Database.");
             return;

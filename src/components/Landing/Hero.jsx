@@ -97,7 +97,7 @@ function Hero() {
         <video
           ref={videoRef}
           id="videoCartas"
-          src="/videos/background-hero-video.mp4"
+          src="https://res.cloudinary.com/dffzhlzzx/video/upload/background-hero-video_fdtupb.mp4"
           muted
           playsInline
           preload="auto"
