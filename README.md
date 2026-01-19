@@ -32,9 +32,6 @@ Não é um produto. Não é uma startup.
 
 ### Roleta
 
-Ela mistura imagens, temas, ideias e conteúdo de forma aleatória.  
-Não é um jogo de sorte — é um jeito de explorar o que existe aqui.
-
 ### Galeria
 
 A galeria guarda momentos, projetos e registros do grupo.
