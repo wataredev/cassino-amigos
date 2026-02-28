@@ -161,6 +161,23 @@ class Service {
     return response.documents;
   }
 
+  async getUserById(accountId) {
+    try {
+      const response = await this.databases.listDocuments(
+        conf.database,
+        conf.tableUsuario,
+        [
+          Query.equal("accountId", accountId)
+        ]
+      );
+
+      return response.documents[0];
+    } catch (error) {
+      console.error("Erro ao buscar usuário por accountId:", error);
+      throw error;
+    }
+  }
+
 }
 
 const service = new Service();

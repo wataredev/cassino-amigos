@@ -16,7 +16,7 @@ export class MovieService {
 
     }
 
-    async addMovie({ tmdbId, title, poster, userId, userName }) {
+    async addMovie({ tmdbId, title, poster, bgMovie, userId }) {
 
         try {
 
@@ -28,9 +28,9 @@ export class MovieService {
                     tmdbId,
                     title,
                     poster,
+                    bgMovie,
                     assistido: false,
                     userId,
-                    userName
                 }
             )
 

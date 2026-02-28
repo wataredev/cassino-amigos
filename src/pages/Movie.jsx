@@ -70,8 +70,8 @@ function Movie() {
                 tmdbId: filme.id,
                 title: filme.title,
                 poster: filme.poster_path,
-                userId: user.$id,
-                userName: user.name
+                bgMovie: filme.backdrop_path,
+                userId: user.$id
 
             })
 
