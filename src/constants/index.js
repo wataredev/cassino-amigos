@@ -60,6 +60,12 @@ export const sideBarContent = {
       icon: Bot,
       isActive: true,
     },
+    {
+      title: "Lista de Filmes",
+      url: "filmes",
+      icon: SquareTerminal,
+      isActive: true,
+    },
   ],
 
   navSecondary: [
