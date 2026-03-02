@@ -38,7 +38,11 @@ export class MovieService {
         return await this.databases.listDocuments(
             conf.database,
             conf.movieCollectionId,
-            [Query.orderDesc("$createdAt")]
+            [
+                Query.orderAsc("$createdAt"),
+                Query.limit(100)
+            ],
+            
         )
     }
 
