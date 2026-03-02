@@ -33,8 +33,13 @@ function Movie() {
       </div>
 
       <div className="mt-5">
-        {activeTab === "search" && <SearchMovie />}
-        {activeTab === "listMovies" && <GroupList />}
+        <div className={activeTab === "search" ? "block" : "hidden"}>
+            <SearchMovie />
+        </div>
+
+        <div className={activeTab === "listMovies" ? "block" : "hidden"}>
+            <GroupList />
+        </div>
       </div>
 
     </div>
